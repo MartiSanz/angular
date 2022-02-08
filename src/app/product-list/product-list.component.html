@@ -6,7 +6,11 @@
   <h3>
     <!-- <a></a> crea un enlace a otras páginas web, archivos o ubicaciones dentro de la misma página, correos electronicos, o cualquier otra URL.</-->
 
-    <a [title]="product.name + ' details'">
+    <a
+      [title]="product.name + ' details'"
+      [routerLink]="['/products', product.id]">
+      <!-- RouterLink ayuda a personalizar el elemento ancla. En este caso, la ruta o URL contiene un segmento fijo, /products. El segmento final es variable, insertando la id del producto actual. Por ej, la URL de un producto con id1 sería similar a https://getting-started-myfork.stackblitz.io/products/1. -->
+
       {{ product.name }}
     </a>
     <!--  agregando <a></a> hace que cada nombre de producto sea un enlace a los detalles del producto, pone el nombre en azul y permite hacerle click </-->
@@ -20,9 +24,13 @@
   <!-- el boton esta vinculado al metodo share() que muestra un alert indicando que el producto fue compartido cada vez que se hace click en el-->
   <button type="button" (click)="share()">Compartir</button>
 
-  <!-- Para mostrar ProductAlertsComponent como elemento secundario de ProductListComponent, agregue <app-product-alerts>.  -->
-  <app-product-alerts [product]="product"> </app-product-alerts>
+  <!-- Para mostrar ProductAlertsComponent como elemento secundario de ProductListComponent, agregue <app-product-alerts>. La etiqueta trae todo, desde la funcionalidad hasta el html -->
 
+  <!-- si notify (que es un evento) cambia su valor, se ejecuta onNotify()-->
+  <app-product-alerts [product]="product" (notify)="onNotify()">
+  </app-product-alerts>
+
+  <!-- muestra u oculta el botón Notificarme , según el precio del producto. El precio del Phone XL supera los $700, por lo que el botón Notificarme aparece en ese producto. -->
 </div>
 
 <!-- 

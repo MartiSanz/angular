@@ -1,3 +1,7 @@
+<!-- muestra u oculta el botón Notificarme , según el precio del producto. En este caso, si el precio del producto es mayor a 700 -->
+
+<!-- Ademas, si se hace click al boton, notify (que es un evento) lo notifica -->
+
 <p *ngIf="product && product.price > 700">
-  <button type="button">Notificarme</button>
+  <button type="button" (click)="notify.emit()">Notificarme</button>
 </p>

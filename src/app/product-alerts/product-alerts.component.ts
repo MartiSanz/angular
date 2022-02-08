@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input,  Output, EventEmitter } from '@angular/core';
 import { Product } from '../products';
 
 @Component({
@@ -10,7 +10,10 @@ export class ProductAlertsComponent implements OnInit {
 
 /*  El decorador @Input() indica que el valor de la propiedad viene del componente padre: ProductListComponent.*/
 
-  @Input() product!: Product;
+  @Input() product: Product | undefined;
+
+  /*  nofify es un EVENTO */
+  @Output() notify = new EventEmitter();
   constructor() {}
 
   ngOnInit() {}
