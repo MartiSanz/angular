@@ -1,5 +1,24 @@
 <h2>Products</h2>
 
+<!-- directiva estrucural </-->
+<!-- por cada producto de la lista de productos, muestra su nombre </-->
+<div *ngFor="let product of products">
+  <h3>
+    <!-- <a></a> crea un enlace a otras páginas web, archivos o ubicaciones dentro de la misma página, correos electronicos, o cualquier otra URL.</-->
+
+    <a [title]="product.name + ' details'">
+      {{ product.name }}
+    </a>
+    <!--  agregando <a></a> hace que cada nombre de producto sea un enlace a los detalles del producto, pone el nombre en azul y permite hacerle click </-->
+  </h3>
+
+  <!-- Si el producto tiene una descripcion, va a mostrarla-->
+  <p *ngIf="product.description">Description: {{ product.description }}</p>
+
+  <!--  muestra el nombre y la descripción de cada producto. El producto final no tiene un párrafo de descripción. Angular no crea el <p>elemento porque la propiedad de descripción del producto está vacía.-->
+
+    
+</div>
 
 <!-- 
 Copyright Google LLC. All Rights Reserved.

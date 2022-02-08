@@ -1,20 +1,21 @@
 import { Component } from '@angular/core';
 
-import { products } from '../products';
+import { products } from '../products'; /* trae un json */
 
+/* linkea en typeScript el html y el css */
 @Component({
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
-  styleUrls: ['./product-list.component.css']
+  styleUrls: ['./product-list.component.css'],
 })
 export class ProductListComponent {
+  /* define la lista de productos que luego usa el html */
   products = products;
 
   share() {
-    window.alert('The product has been shared!');
+    window.alert('El producto fue compartido');
   }
 }
-
 
 /*
 Copyright Google LLC. All Rights Reserved.
