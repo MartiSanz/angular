@@ -7,6 +7,9 @@ import { AppComponent } from './app.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
 import { ProductListComponent } from './product-list/product-list.component';
 
+/* El generador agregó automáticamente ProductAlertsComponent para que esté disponible para otros componentes en la aplicación. */
+import { ProductAlertsComponent } from './product-alerts/product-alerts.component';
+
 @NgModule({
   imports: [
     BrowserModule,
@@ -18,7 +21,8 @@ import { ProductListComponent } from './product-list/product-list.component';
   declarations: [
     AppComponent,
     TopBarComponent,
-    ProductListComponent
+    ProductListComponent,
+    ProductAlertsComponent
   ],
   bootstrap: [
     AppComponent

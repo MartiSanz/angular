@@ -17,7 +17,12 @@
 
   <!--  muestra el nombre y la descripción de cada producto. El producto final no tiene un párrafo de descripción. Angular no crea el <p>elemento porque la propiedad de descripción del producto está vacía.-->
 
-    
+  <!-- el boton esta vinculado al metodo share() que muestra un alert indicando que el producto fue compartido cada vez que se hace click en el-->
+  <button type="button" (click)="share()">Compartir</button>
+
+  <!-- Para mostrar ProductAlertsComponent como elemento secundario de ProductListComponent, agregue <app-product-alerts>.  -->
+  <app-product-alerts [product]="product"> </app-product-alerts>
+
 </div>
 
 <!-- 
