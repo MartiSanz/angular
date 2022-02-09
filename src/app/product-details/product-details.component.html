@@ -1,7 +1,10 @@
 <h2>Product Details</h2>
 
+<!-- Este div aparece cuando se le hace click al nombre del producto en product-list.component.html -->
+
 <div *ngIf="product">
   <h3>{{ product.name }}</h3>
   <h4>{{ product.price | currency }}</h4>
   <p>{{ product.description }}</p>
+  <button type="button" (click)="addToCart(product)">Buy</button>
 </div>
