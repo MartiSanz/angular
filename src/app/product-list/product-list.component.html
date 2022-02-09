@@ -1,4 +1,4 @@
-<h2>Products</h2>
+<h2>Productos</h2>
 
 <!-- directiva estrucural </-->
 <!-- por cada producto de la lista de productos, muestra su nombre </-->
@@ -8,7 +8,8 @@
 
     <a
       [title]="product.name + ' details'"
-      [routerLink]="['/products', product.id]">
+      [routerLink]="['/products', product.id]"
+    >
       <!-- RouterLink ayuda a personalizar el elemento ancla. En este caso, la ruta o URL contiene un segmento fijo, /products. El segmento final es variable, insertando la id del producto actual. Por ej, la URL de un producto con id1 sería similar a https://getting-started-myfork.stackblitz.io/products/1. -->
 
       {{ product.name }}
