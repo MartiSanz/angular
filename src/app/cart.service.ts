@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 // importo la interfac products
 import { Product } from './products';
+// precio de envios
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root',
@@ -9,7 +11,7 @@ export class CartService {
   // creo una variable que almacene la matriz de productos
   items: Product[] = [];
 
-  constructor() {}
+  constructor(private http: HttpClient) {}
 
   //agrega un producto al carrito
   addToCart(product: Product) {
@@ -25,5 +27,13 @@ export class CartService {
   clearCart() {
     this.items = [];
     return this.items;
+  }
+
+  // get precio de los envios
+  // type: string; price: number --> son los datos que contiene el JSON de envios
+  getShippingPrices() {
+    return this.http.get<{ type: string; price: number }[]>(
+      '/assets/shipping.json'
+    );
   }
 }
